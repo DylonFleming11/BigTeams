@@ -35,9 +35,52 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onCreateTeam = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.createTeam(data)
+    .then(ui.createTeamSuccess)
+    .catch(ui.createTeamFailure)
+}
+
+const onIndexTeam = function (event) {
+  event.preventDefault()
+  api.indexTeam()
+    .then(ui.indexTeamSuccess)
+    .catch(ui.indexTeamFailure)
+}
+
+const onShowTeam = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.showTeam(data)
+    .then(ui.showTeamSuccess)
+    .catch(ui.showTeamFailure)
+}
+
+const onUpdateTeam = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateTeam(data)
+    .then(ui.updateTeamSuccess)
+    .catch(ui.updateTeamFailure)
+}
+
+const onDeleteTeam = function (event) {
+  event.preventDefault()
+  api.deleteTeam()
+    .then(ui.deleteTeamSuccess)
+    .catch(ui.deleteTeamFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePass,
-  onSignOut
+  onSignOut,
+  onCreateTeam,
+  onIndexTeam,
+  onShowTeam,
+  onUpdateTeam,
+  onDeleteTeam
 }

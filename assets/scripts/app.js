@@ -11,7 +11,9 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-pass').on('submit', authEvents.onChangePass)
   $('#sign-out').on('click', authEvents.onSignOut)
-  // $('').
-  // $('').
-  // $('').
+  $('#create-team').on('submit', authEvents.onCreateTeam)
+  $('#index-team').on('click', authEvents.onIndexTeam)
+  $('#show-team').on('submit', authEvents.onShowTeam)
+  $('#update-team').on('submit', authEvents.onUpdateTeam)
+  $('delete-team').on('submit', authEvents.onDeleteTeam)
 })
