@@ -53,7 +53,9 @@ const onIndexTeam = function (event) {
 const onShowTeam = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.showTeam(data.team.id)
+  const id = data.team.id
+  console.log(data, id)
+  api.showTeam(data, id)
     .then(ui.showTeamSuccess)
     .catch(ui.showTeamFailure)
 }
@@ -62,7 +64,8 @@ const onUpdateTeam = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = data.team.id
-  api.updateTeam(id, data)
+  // console.log(id, data)
+  api.updateTeam(data, id)
     .then(ui.updateTeamSuccess)
     .catch(ui.updateTeamFailure)
 }
@@ -70,7 +73,8 @@ const onUpdateTeam = function (event) {
 const onDeleteTeam = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.deleteTeam(data.team.id)
+  const id = data.team.id
+  api.deleteTeam(data, id)
     .then(ui.deleteTeamSuccess)
     .catch(ui.deleteTeamFailure)
 }

@@ -60,38 +60,39 @@ const indexTeam = function (data) {
   })
 }
 
-const showTeam = function (data) {
+const showTeam = function (data, id) {
   return $.ajax({
     method: 'GET',
     data,
-    url: config.apiUrl + '/teams/:id',
+    url: config.apiUrl + '/teams/' + id,
     headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
 }
 
-const updateTeam = function (id, data) {
+const updateTeam = function (data, id) {
   return $.ajax({
     method: 'PATCH',
     data,
-    url: config.apiUrl + '/teams/:id',
+    url: config.apiUrl + '/teams/' + id,
     headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
 }
 
-const deleteTeam = function (data) {
+const deleteTeam = function (data, id) {
   return $.ajax({
     method: 'DELETE',
     data,
-    url: config.apiUrl + '/teams/:id',
+    url: config.apiUrl + '/teams/' + id,
     headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
 }
+
 module.exports = {
   signUp,
   signIn,

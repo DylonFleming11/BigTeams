@@ -42,7 +42,14 @@ const createTeamSuccess = function (res) {
   $('#create-team').trigger('reset')
   $('#messaging').text('Created Team successfully!')
   console.log(res)
-  // $('#teams').text(res)
+  $('#teams').html(`
+    <p>ID: ${res._id}</p>
+    <p>STATE: ${res.state}</p>
+    <p>CITY: ${res.city}</p>
+    <p>NAME: ${res.name}</p>
+    <p>STADIUM: ${res.stadium}</p>
+    <p>SPORT: ${res.sport}</p>
+  `)
 }
 
 const createTeamFailure = function () {
@@ -50,12 +57,12 @@ const createTeamFailure = function () {
 }
 
 const indexTeamSuccess = function (res) {
-  const teams = res.team
+  // const teams = res.team
   console.log(res)
   $('#index-team').trigger('reset')
   $('#messaging').text('Showing Teams successfully!')
   let teamsHtml = ''
-  teams.forEach(teams => {
+  res.forEach(teams => {
     teamsHtml += `
     <p>ID: ${teams._id}</p>
     <p>STATE: ${teams.state}</p>
@@ -65,7 +72,7 @@ const indexTeamSuccess = function (res) {
      <p>SPORT: ${teams.sport}</p>
     `
   })
-  $('#teams').text(teamsHtml)
+  $('#teams').html(teamsHtml)
 }
 
 const indexTeamFailure = function () {
@@ -75,6 +82,14 @@ const indexTeamFailure = function () {
 const showTeamSuccess = function (res) {
   $('#show-team').trigger('reset')
   $('#messaging').text('Found Team successfully!')
+  $('#teams').html(`
+    <p>ID: ${res._id}</p>
+    <p>STATE: ${res.state}</p>
+    <p>CITY: ${res.city}</p>
+    <p>NAME: ${res.name}</p>
+    <p>STADIUM: ${res.stadium}</p>
+    <p>SPORT: ${res.sport}</p>
+  `)
 }
 
 const showTeamFailure = function () {
@@ -84,6 +99,15 @@ const showTeamFailure = function () {
 const updateTeamSuccess = function (res) {
   $('#update-team').trigger('reset')
   $('#messaging').text('Updated Team successfully!')
+  $('#teams').text('Trying searching your updated team by ID!')
+  // $('#teams').html(`
+  //   <p>ID: ${res._id}</p>
+  //   <p>STATE: ${res.state}</p>
+  //   <p>CITY: ${res.city}</p>
+  //   <p>NAME: ${res.name}</p>
+  //   <p>STADIUM: ${res.stadium}</p>
+  //   <p>SPORT: ${res.sport}</p>
+  // `)
 }
 
 const updateTeamFailure = function () {
@@ -93,6 +117,7 @@ const updateTeamFailure = function () {
 const deleteTeamSuccess = function (res) {
   $('#delete-team').trigger('reset')
   $('#messaging').text('Deleted Team successfully!')
+  $('#teams').text('')
 }
 
 const deleteTeamFailure = function () {
