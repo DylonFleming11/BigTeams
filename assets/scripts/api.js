@@ -22,7 +22,7 @@ const changePass = function (data) {
     method: 'PATCH',
     data,
     url: config.apiUrl + '/change-password',
-    header: {
+    headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
@@ -32,7 +32,7 @@ const signOut = function () {
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/sign-out',
-    header: {
+    headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
@@ -42,18 +42,19 @@ const createTeam = function (data) {
   return $.ajax({
     method: 'POST',
     data,
-    url: config.apiUrl + '/create',
-    header: {
+    url: config.apiUrl + '/teams',
+    headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
 }
 
-const indexTeam = function () {
+const indexTeam = function (data) {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/index',
-    heeader: {
+    data,
+    url: config.apiUrl + '/teams',
+    headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
@@ -63,29 +64,30 @@ const showTeam = function (data) {
   return $.ajax({
     method: 'GET',
     data,
-    url: config.apiUrl + '/show',
-    header: {
+    url: config.apiUrl + '/teams/:id',
+    headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
 }
 
-const updateTeam = function (data) {
+const updateTeam = function (id, data) {
   return $.ajax({
     method: 'PATCH',
     data,
-    url: config.apiUrl + '/update',
-    header: {
+    url: config.apiUrl + '/teams/:id',
+    headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })
 }
 
-const deleteTeam = function () {
+const deleteTeam = function (data) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/destroy',
-    header: {
+    data,
+    url: config.apiUrl + '/teams/:id',
+    headers: {
       Authorization: `Bearer ${store.user.token}`
     }
   })

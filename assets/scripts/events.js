@@ -1,6 +1,6 @@
 'use strict'
 
-const getFormFields = require('./../../get-form-fields')
+const getFormFields = require('./../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -53,7 +53,7 @@ const onIndexTeam = function (event) {
 const onShowTeam = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.showTeam(data)
+  api.showTeam(data.team.id)
     .then(ui.showTeamSuccess)
     .catch(ui.showTeamFailure)
 }
@@ -61,14 +61,16 @@ const onShowTeam = function (event) {
 const onUpdateTeam = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.updateTeam(data)
+  const id = data.team.id
+  api.updateTeam(id, data)
     .then(ui.updateTeamSuccess)
     .catch(ui.updateTeamFailure)
 }
 
 const onDeleteTeam = function (event) {
   event.preventDefault()
-  api.deleteTeam()
+  const data = getFormFields(event.target)
+  api.deleteTeam(data.team.id)
     .then(ui.deleteTeamSuccess)
     .catch(ui.deleteTeamFailure)
 }

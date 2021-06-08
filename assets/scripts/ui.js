@@ -41,6 +41,8 @@ const signOutFailure = function () {
 const createTeamSuccess = function (res) {
   $('#create-team').trigger('reset')
   $('#messaging').text('Created Team successfully!')
+  console.log(res)
+  // $('#teams').text(res)
 }
 
 const createTeamFailure = function () {
@@ -48,8 +50,22 @@ const createTeamFailure = function () {
 }
 
 const indexTeamSuccess = function (res) {
+  const teams = res.team
+  console.log(res)
   $('#index-team').trigger('reset')
   $('#messaging').text('Showing Teams successfully!')
+  let teamsHtml = ''
+  teams.forEach(teams => {
+    teamsHtml += `
+    <p>ID: ${teams._id}</p>
+    <p>STATE: ${teams.state}</p>
+     <p>CITY: ${teams.city}</p>
+     <p>NAME: ${teams.name}</p>
+     <p>STADIUM: ${teams.stadium}</p>
+     <p>SPORT: ${teams.sport}</p>
+    `
+  })
+  $('#teams').text(teamsHtml)
 }
 
 const indexTeamFailure = function () {

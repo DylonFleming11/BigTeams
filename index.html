@@ -19,7 +19,7 @@
         <form id="sign-up">
           <input name="credentials[email]" required type="email" placeholder="Email Address"/>
           <input name="credentials[password]" required type="password" placeholder="Password"/>
-          <input name="credentials[password-confirmation]" required type="password" placeholder="Password confirmation"/>
+          <input name="credentials[password_confirmation]" required type="password" placeholder="Password confirmation"/>
           <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
       </section>
@@ -36,8 +36,8 @@
       <section>
         <h3>Change Password</h3>
         <form id="change-pass">
-          <input name="credentials[oldpw]" required type="password" placeholder="Old Password"/>
-          <input name="credentials[newpw]" required type="password" placeholder="New Password"/>
+          <input name="passwords[old]" required type="password" placeholder="Old Password"/>
+          <input name="passwords[new]" required type="password" placeholder="New Password"/>
           <button type="submit" class="btn btn-primary">Change Password</button>
         </form>
       </section>
@@ -52,11 +52,11 @@
       <section>
         <h3>Create Team</h3>
         <form id="create-team">
-          <input name="credentials[state]" required type="text" placeholder="State of Team"/>
-          <input name="credentials[city]" required type="text" placeholder="City of Team"/>
-          <input name="credentials[name]" required type="text" placeholder="Name of Team"/>
-          <input name="credentials[stadium]" required type="text" placeholder="Stadium name"/>
-          <input name="credentials[sport]" required type="text" placeholder="What sport?"/>
+          <input name="team[state]" required type="text" placeholder="State of Team"/>
+          <input name="team[city]" required type="text" placeholder="City of Team"/>
+          <input name="team[name]" required type="text" placeholder="Name of Team"/>
+          <input name="team[stadium]" required type="text" placeholder="Stadium name"/>
+          <input name="team[sport]" required type="text" placeholder="What sport?"/>
           <button type="submit" class="btn btn-primary">Create Team</button>
         </form>
       </section>
@@ -71,7 +71,7 @@
       <section>
         <h3>Find Team</h3>
         <form id="show-team">
-          <input name="credentials[id]" required type="text" placeholder="Id of Team here">
+          <input name="team[id]" required type="text" placeholder="Id of Team here">
           <button type="submit" class="btn btn-primary">Find Team</button>
         </form>
       </section>
@@ -79,12 +79,12 @@
       <section>
         <h3>Update Team</h3>
         <form id="update-team">
-          <input name="credentials[id]" required type="text" placeholder="Id of Team here">
-          <input name="credentials[state]" type="text" placeholder="Change name of Team"/>
-          <input name="credentials[city]" type="text" placeholder="Change City of Team"/>
-          <input name="credentials[name]" type="text" placeholder="Change Name of Team"/>
-          <input name="credentials[stadium]" type="text" placeholder="Change Teams Stadium name"/>
-          <input name="credentials[sport]" type="text" placeholder="Change Sport Team plays"/>
+          <input name="team[id]" required type="text" placeholder="Id of Team here">
+          <input name="team[state]" type="text" placeholder="Change name of Team"/>
+          <input name="team[city]" type="text" placeholder="Change City of Team"/>
+          <input name="team[name]" type="text" placeholder="Change Name of Team"/>
+          <input name="team[stadium]" type="text" placeholder="Change Teams Stadium name"/>
+          <input name="team[sport]" type="text" placeholder="Change Sport Team plays"/>
           <button type="submit" class="btn btn-primary">Update Team</button>
         </form>
       </section>
@@ -92,12 +92,13 @@
       <section>
         <h3>Delete Team</h3>
         <form id="delete-team">
-          <input name="credentials[id]" required type="text" placeholder="Id of Team here">
+          <input name="team[id]" required type="text" placeholder="Id of Team here">
           <button type="submit" class="btn btn-primary">Delete Team</button>
         </form>
       </section>
 
       <p id="messaging"></p>
+      <p id="teams"></p>
 
     </body>
 </html>

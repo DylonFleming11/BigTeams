@@ -15,5 +15,5 @@ $(() => {
   $('#index-team').on('click', authEvents.onIndexTeam)
   $('#show-team').on('submit', authEvents.onShowTeam)
   $('#update-team').on('submit', authEvents.onUpdateTeam)
-  $('delete-team').on('submit', authEvents.onDeleteTeam)
+  $('#delete-team').on('submit', authEvents.onDeleteTeam)
 })
