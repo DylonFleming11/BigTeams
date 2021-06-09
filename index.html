@@ -12,8 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <section class="top-section">
       <h1>BigTeams - Dylon</h1>
-
+    </section>
+    <section class="before-signin">
       <section>
         <h3>Sign Up</h3>
         <form id="sign-up">
@@ -32,10 +34,12 @@
           <button type="submit" class="btn btn-primary">Sign In</button>
         </form>
       </section>
+    </section>
 
+    <section class="change-singin">
       <section>
-        <h3>Change Password</h3>
         <form id="change-pass">
+          <!-- <h3>Change Password</h3> -->
           <input name="passwords[old]" required type="password" placeholder="Old Password"/>
           <input name="passwords[new]" required type="password" placeholder="New Password"/>
           <button type="submit" class="btn btn-primary">Change Password</button>
@@ -43,12 +47,14 @@
       </section>
 
       <section>
-        <h3>Sign Out</h3>
         <form id="sign-out">
+          <!-- <h6>Sign Out</h6> -->
           <button type="button" class="btn btn-primary">Sign Out</button>
         </form>
       </section>
+    </section>
 
+    <section class="after-signin">
       <section>
         <h3>Create Team</h3>
         <form id="create-team">
@@ -96,7 +102,7 @@
           <button type="submit" class="btn btn-primary">Delete Team</button>
         </form>
       </section>
-
+    </section>
       <p id="messaging"></p>
       <p id="teams"></p>
 

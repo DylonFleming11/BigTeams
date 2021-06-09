@@ -14,6 +14,9 @@ const signInSuccess = function (res) {
   $('#sign-in').trigger('reset')
   $('#messaging').text('Signed in successfully!')
   store.user = res.user
+  $('.after-signin').show()
+  $('.before-signin').hide()
+  $('.change-singin').show()
 }
 
 const signInFailure = function () {
