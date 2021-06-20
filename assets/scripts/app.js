@@ -17,5 +17,5 @@ $(() => {
   $('#update-team').on('submit', authEvents.onUpdateTeam)
   $('#delete-team').on('submit', authEvents.onDeleteTeam)
   $('.after-signin').hide()
-  $('.change-singin').hide()
+  $('.change-signin').hide()
 })

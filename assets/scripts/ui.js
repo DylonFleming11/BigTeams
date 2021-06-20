@@ -16,7 +16,7 @@ const signInSuccess = function (res) {
   store.user = res.user
   $('.after-signin').show()
   $('.before-signin').hide()
-  $('.change-singin').show()
+  $('.change-signin').show()
 }
 
 const signInFailure = function () {
@@ -35,6 +35,8 @@ const changePassFailure = function (res) {
 const signOutSuccess = function (res) {
   store.user = null
   $('#messaging').text('succesfully Signed Out!')
+  $('.before-signin').show()
+  $('.after-signin').hide()
 }
 
 const signOutFailure = function () {
@@ -44,7 +46,6 @@ const signOutFailure = function () {
 const createTeamSuccess = function (res) {
   $('#create-team').trigger('reset')
   $('#messaging').text('Created Team successfully!')
-  console.log(res)
   $('#teams').html(`
     <p>ID: ${res._id}</p>
     <p>STATE: ${res.state}</p>
@@ -60,8 +61,6 @@ const createTeamFailure = function () {
 }
 
 const indexTeamSuccess = function (res) {
-  // const teams = res.team
-  console.log(res)
   $('#index-team').trigger('reset')
   $('#messaging').text('Showing Teams successfully!')
   let teamsHtml = ''

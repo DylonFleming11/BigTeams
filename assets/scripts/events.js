@@ -54,7 +54,6 @@ const onShowTeam = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = data.team.id
-  console.log(data, id)
   api.showTeam(data, id)
     .then(ui.showTeamSuccess)
     .catch(ui.showTeamFailure)
@@ -64,7 +63,6 @@ const onUpdateTeam = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = data.team.id
-  // console.log(id, data)
   api.updateTeam(data, id)
     .then(ui.updateTeamSuccess)
     .catch(ui.updateTeamFailure)
